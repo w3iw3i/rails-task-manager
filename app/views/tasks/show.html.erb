@@ -1,0 +1,29 @@
+<!--
+<div class="d-flex justify-content-start align-items-center">
+  <h1><%= @task.title %></h1>
+  <%= link_to edit_path(@task.id), { class: "btn btn-primary", style: "float: right;" } do %>
+    <i class="fas fa-pencil-alt"></i> Edit this task
+  <% end %>
+</div>
+-->
+
+<%= link_to edit_path(@task.id), { class: "btn btn-primary", style: "float: right;" } do %>
+  <i class="fas fa-pencil-alt"></i> Edit this task
+<% end %>
+
+<h1><%= @task.title %></h1>
+
+<p class="card"><%= @task.details %></p>
+
+<% if @task.completed %>
+  <i class="far fa-check-square"></i> This task has been completed.</p>
+<% else %>
+  <i class="far fa-square"></i> This task has not been completed yet.</p>
+<% end %>
+
+
+<hr>
+
+<%= link_to tasks_path do %>
+  <i class="far fa-arrow-alt-circle-left"></i> Back to list
+<% end %>
